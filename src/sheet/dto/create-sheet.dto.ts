@@ -1,3 +1,3 @@
 export class CreateSheetDto {
-  value: string;
+  value: string | number;
 }

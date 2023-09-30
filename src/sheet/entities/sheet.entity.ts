@@ -1,6 +1,6 @@
 export class Ceil {
-  value: string;
-  result: string;
+  value: string | number;
+  result: string | number;
 }
 export class Sheet {
   [cellId: string]: Ceil;

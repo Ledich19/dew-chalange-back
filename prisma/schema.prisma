@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Ceil {
+  id String @id @map("_id") @default(uuid())
+  cellId String
+  value String?
+  valueType ValueType
+  sheetId String
+  sheet Sheet @relation(fields: [sheetId], references: [id])
+}
+
+model Sheet {
+  id String @id @map("_id")
+  ceils Ceil[]
+}
+
+enum ValueType {
+  STRING
+  INTEGER
+  FLOAT
+}

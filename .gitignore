@@ -2,7 +2,10 @@
 /dist
 /node_modules
 /Requests
-
+.env
+/pglog
+/pgconf
+/pg_data
 # Logs
 logs
 *.log
